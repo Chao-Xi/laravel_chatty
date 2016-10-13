@@ -1,0 +1,18 @@
+1.composer create-project laravel/laravel your-project-name 5.2.*
+（¨cannot install laravel 5.3 since php version is old）
+2.cd/chatty/cmd
+  php  artisan app:name Chatty
+  APP=>Chatty in app/Http/Controllers/Auth/AuthController.php
+ 3.Delete Contoller/ Auth Folder
+ 4.delete database/migrations/two 2014-....files
+5.delete resources/assets/sass folder
+6.delete gulpfile.js
+7.delte resources/vendor/welcome.blade.php
+8.database
+ vendor/.env set database connect
+9.create new migrations/.php
+  1)composer dump-autoload
+  2)php artisan make:migration create_users_table
+10. create database chatty
+    alter migrations/create_users_table.php
+    php artisan migrate
