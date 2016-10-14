@@ -16,3 +16,4 @@
 10. create database chatty
     alter migrations/create_users_table.php
     php artisan migrate
+ 11.php artisan make:migration create_friends_table
