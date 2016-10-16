@@ -79,7 +79,23 @@ Route::post('/profile/edit',[
      'middleware'=>['auth']
 	]);
 
+Route::get('/friends',[
+     'uses'=>'\Chatty\Http\Controllers\FriendController@getIndex',
+     'as'=>'friend.index',
+     'middleware'=>['auth']
+	]);
 
+Route::get('/friends/add/{username}',[
+     'uses'=>'\Chatty\Http\Controllers\FriendController@getAdd',
+     'as'=>'friend.add',
+     'middleware'=>['auth']
+	]);
+
+Route::get('/friends/accept/{username}',[
+     'uses'=>'\Chatty\Http\Controllers\FriendController@getAccept',
+     'as'=>'friend.accept',
+     'middleware'=>['auth']
+	]);
 
 
 
