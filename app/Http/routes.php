@@ -79,6 +79,9 @@ Route::post('/profile/edit',[
      'middleware'=>['auth']
 	]);
 
+/**
+  *friends
+ */
 Route::get('/friends',[
      'uses'=>'\Chatty\Http\Controllers\FriendController@getIndex',
      'as'=>'friend.index',
@@ -97,9 +100,15 @@ Route::get('/friends/accept/{username}',[
      'middleware'=>['auth']
 	]);
 
+/**
+  *Statuses
+ */
 
-
-
+Route::post('status',[
+     'uses'=>'\Chatty\Http\Controllers\StatusController@postStatus',
+     'as'=>'status.post',
+     'middleware'=>['auth']
+	]);
 
 
 

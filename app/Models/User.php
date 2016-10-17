@@ -57,6 +57,10 @@ class User extends Model implements AuthenticatableContract
        return "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50/{{md5($this->email)}}?d=mm&s=60"; 
     }
 
+    public function statuses()
+    {
+     return $this->hasMany('Chatty\Models\Status','user_id'); 
+    }
 
     public function friendsOfMine()
     {
