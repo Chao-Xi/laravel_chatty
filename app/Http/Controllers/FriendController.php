@@ -60,5 +60,16 @@
 
          return redirect()->route('profile.index',['username'=>$user->username])->with('info','Friend request accept');
      }
+     
+     public function postDelete($username)
+     {
+        $user=User::where('username',$username)->first();
+         if(Auth::user()->isFriendsWith($user))
+         {
+            return redirect()->back();
+         }
+          Auth::user()->deleteFriend($user);
+          return redirect()->back()->with('info','Friend deleted');
 
+     }
  }

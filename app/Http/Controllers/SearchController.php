@@ -25,4 +25,6 @@
      
      return view('search.results')->with('users',$users);
      }
+
+    
  }

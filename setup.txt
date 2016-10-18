@@ -19,3 +19,6 @@
  11.php artisan make:migration create_friends_table
  12.php artisan make:migration create_statuses_table
     php artisan migrate
+13 php artisan make:migration create_likeable_table
+   php artisan migrate
+

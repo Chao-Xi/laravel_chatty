@@ -10,4 +10,19 @@ class Status extends Model
     {
     	return $this->belongsTo('Chatty\Models\User','user_id');
     }
+
+     public function scopeNotReply($query)
+    {
+    	return $query->whereNull('parent_id');
+    }
+    
+    public function replies()
+    {
+       return $this->hasMany('Chatty\Models\Status','parent_id');
+    }
+
+    public  function likes()
+    {
+        return $this->morphMany('Chatty\Models\Like','likeable');
+    }
 }
